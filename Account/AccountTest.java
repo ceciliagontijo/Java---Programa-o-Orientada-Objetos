@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class AccountTest {
     public static void main(String[] args) 
     {
-        Account account1 = new Account("Jane", 50.00, 88091, 10000);
-        Account account2 = new Account("John", -7.53, 97600, 6000);
+        Account account1 = new Account("Jane", 88091, 10000);
+        Account account2 = new Account("John", 97600, 6000);
 
         System.out.printf("%s Saldo: $%.2f Número da conta: %d Limite: %d%n",
         account1.getName(), account1.getBalance(), account1.getNum(), account1.getLimit());
@@ -31,6 +31,26 @@ public class AccountTest {
 
         System.out.printf("%s Saldo: $%.2f %n", account1.getName(), account1.getBalance());
         System.out.printf("%s Saldo: $%.2f %n%n", account2.getName(), account2.getBalance());
+
+        System.out.print("Quantidade que deseja sacar na conta 1: ");
+        double saqueAmount = input.nextDouble();
+        account1.withdraw(saqueAmount);
+
+        System.out.printf("%s Novo saldo: $%.2f %n", account1.getName(), account1.getBalance());
+
+        System.out.print("Quantidade que deseja sacar na conta 2: ");
+        saqueAmount = input.nextDouble();
+        account2.withdraw(saqueAmount);
+
+        System.out.printf("%s Novo saldo: $%.2f %n%n", account2.getName(), account2.getBalance());
+
+        System.out.print("Digite a senha atual: ");
+        input.nextLine();
+        String oldPass = input.nextLine();
+        System.out.print("Digite a nova senha: ");
+        String newPass = input.nextLine();
+        account1.mudaSenha(oldPass, newPass);
+
 
     }
 }
