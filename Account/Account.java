@@ -48,15 +48,15 @@ public class Account
             }
         else
             {
-            if (limit > saqueAmount - balance)
+            if (limit > (saqueAmount - balance))
             {
-                limit = limit - (balance - saqueAmount);
+                limit = limit - (saqueAmount - balance);
                 balance = 0.0;
-                System.out.printf("%nO valor excedido no seu saque está sendo retirado do seu limite.");
+                System.out.printf("%nO valor excedido no seu saque está sendo retirado do seu limite.%n");
             }
             else
             {
-                System.out.printf("%nNão é possível sacar esse valor pois ultrapassa seu limite!");
+                System.out.printf("%nNão é possível sacar esse valor pois ultrapassa seu limite!%n");
             }
             }
      }
@@ -68,7 +68,7 @@ public class Account
         if (oldPass.equals(password))
         {
             password = newPass;
-            System.out.printf("Senha atualizada com sucesso!!!");
+            System.out.printf("Senha atualizada com sucesso! Nova senha = %s", password);
         }
         else
         {
