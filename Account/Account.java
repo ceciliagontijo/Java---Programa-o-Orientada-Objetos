@@ -46,14 +46,18 @@ public class Account
             {
                 balance = balance - saqueAmount;
             }
+        else
+            {
+            if (limit > saqueAmount - balance)
+            {
+                limit = limit - (balance - saqueAmount);
+                balance = 0.0;
+                System.out.printf("%nO valor excedido no seu saque está sendo retirado do seu limite.");
+            }
             else
             {
-                if (limit > balance - saqueAmount)
-                {
-                    limit = limit - (balance - saqueAmount);
-                    balance = 0.0;
-                    System.out.printf("%nO valor excedido no seu saque está sendo retirado do seu limite.");
-                }
+                System.out.printf("%nNão é possível sacar esse valor pois ultrapassa seu limite!");
+            }
             }
      }
     

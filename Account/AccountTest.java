@@ -51,6 +51,6 @@ public class AccountTest {
         String newPass = input.nextLine();
         account1.mudaSenha(oldPass, newPass);
 
-
+        input.close();
     }
 }
