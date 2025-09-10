@@ -14,7 +14,7 @@ public class Date
         }
         else
         {
-            System.out.printf("Não existe esse mês!%n");
+            throw new IllegalArgumentException("Não existe esse mês: " + month);
         }
         if(month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
         {
@@ -24,7 +24,7 @@ public class Date
             }
             else
             {
-                System.out.printf("Não existe esse dia!%n");
+                throw new IllegalArgumentException("Não existe esse dia: " + day);
             }
         }
             else
@@ -35,9 +35,28 @@ public class Date
                 }
                 else 
                 {
-                    System.out.printf("Não existe esse dia!%n");
+                    throw new IllegalArgumentException("Não existe esse dia: " + day);
                 }
             }
         this.year = year;
+        if (year%4 == 0 && year%100 != 0 || year%400 == 0)
+        {
+            System.out.printf("O ano %d é bissexto!%n", year);
+        }
+    }
+
+    public int getMonth()
+    {
+        return month;
+    }
+
+    public int getDay()
+    {
+        return day;
+    }
+
+    public int getYear()
+    {
+        return year;
     }
 }

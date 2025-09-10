@@ -7,6 +7,7 @@ public class Account
     private int num;
     private double limit;
     private String password;
+    private Date openingDate;
     
     public Account() //construtor sem parametros
     {
@@ -98,5 +99,10 @@ public class Account
       public double getLimit()
     {
         return limit;
+    }
+
+    public Date getOpeningDate()
+    {
+        return openingDate;
     }
 }
