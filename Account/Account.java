@@ -7,9 +7,8 @@ public class Account
     private int num;
     private double limit;
     private String password;
-
-
-    public Account()
+    
+    public Account() //construtor sem parametros
     {
         this.name = "";
         this.balance = 0.0;
@@ -18,7 +17,7 @@ public class Account
         this.password = "0000";
     }
 
-    public Account(String name, int num, double limit)
+    public Account(String name, int num, double limit) //construtor com parametros
     {
         this.name = name;
         this.num = num;
