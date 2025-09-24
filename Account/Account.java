@@ -11,21 +11,13 @@ public class Account
     
     public Account(String name, int num) //construtor sem parametros
     {
-        this.name = "";
+        this.name = name;
         this.balance = 0.0;
-        this.num = 0;
-        this.limit = 0;
+        this.num = num;
+        this.limit = 1000;
         this.password = "0000";
     }
 
-    public Account() //construtor sem parametros
-    {
-        this.name = "";
-        this.balance = 0.0;
-        this.num = 0;
-        this.limit = 0;
-        this.password = "0000";
-    }
 
     public Account(String name, int num, double limit) //construtor com parametros
     {
@@ -85,6 +77,18 @@ public class Account
         }
     }
 
+    public int verificaSenha(String Pass)
+    {
+        if (Pass.equals(password))
+        {
+            return 1;
+        }
+        else 
+        {
+            return 0;
+        }
+    }
+
     public double getBalance()
     {
         return balance;
@@ -114,4 +118,13 @@ public class Account
     {
         return openingDate;
     }
+
+
+    @Override
+    public String toString() 
+    {
+    return "Conta nº " + num + ", Nome: " + name + ", Saldo: " + balance + ", Limite: " + limit;    
+    }
+
+
 }
