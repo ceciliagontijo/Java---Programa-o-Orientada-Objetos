@@ -1,20 +1,19 @@
 package Account;
 
 import java.util.Scanner;
+import java.util.Scanner;
 
 public class AccountTest 
 {
     public static void main(String[] args) 
     {
-        Account account1 = new Account("Ceci", 88091, 1000);
-        Account account2 = new Account("Gabriel", 97600, 3000);
 
-        System.out.printf("%s - Saldo: $%.2f - Número da conta: %d - Limite: %.2f%n",
-        account1.getName(), account1.getBalance(), account1.getNum(), account1.getLimit());
-        System.out.printf("%s - Saldo: $%.2f - Número da conta: %d - Limite: %.2f%n",
-        account2.getName(), account2.getBalance(), account2.getNum(), account2.getLimit());
+
+        Account account1 = new Account();
+        Account account2 = new Account();
 
         Scanner input = new Scanner(System.in);
+       // ArrayList<Account> contas = new ArrayList<>();
 
         System.out.printf("Dia = %n");
         int d = input.nextInt();
@@ -30,6 +29,57 @@ public class AccountTest
         catch (IllegalArgumentException e)
         {
             System.out.println("Erro ao criar data: " + e.getMessage());
+        }
+        
+        int user;
+        System.out.println("\n--- MENU DE ENTRADA ---");
+        System.out.println("1 - Gerente");
+        System.out.println("2 - Cliente");
+        user = input.nextInt();
+
+        if (user == 1)
+        {
+            int ger;
+            System.out.println("1 - Criar nova conta (corrente, poupança ou especial)");
+            System.out.println("2 - Visualizar informações de conta");
+            ger = input.nextInt();
+            switch(ger)
+            {
+                case 1: 
+                    int conta;
+                    System.out.print("Qual tipo de conta deseja criar?");
+                    System.out.println("1 - Corrente");
+                    System.out.println("2 - Especial");
+                    conta = input.nextInt();
+                    if (conta == 1)
+                    {
+                        String nome;
+                        int id;
+                        System.out.print("Nome da conta: ");
+                        nome = input.nextLine(); 
+                        System.out.print("Número da conta: ");
+                        id = input.nextInt();
+                        //Account account1 = new Account(nome, id);
+                        //Account novaConta = new Account(nome, id);
+                        //contas.add(novaConta); // Adiciona a conta à lista
+                        //Account c1 = new Account("Maria", 101);
+                        //Account c2 = new Account("João", 102);
+
+                        //contas.add(c1); // vai para posição 0
+                        //contas.add(c2); // vai para posição 1
+                    }
+                    else 
+                    {
+                        String nome;
+                        int id;
+                        int limit;
+                        System.out.print("Nome da conta: ");
+                        nome = input.nextLine(); 
+                        System.out.print("Número da conta: ");
+                        id = input.nextInt();
+                       // Account account2 = new Account(nome, id, limit);
+                    }
+            }
         }
 
         int option = 0;

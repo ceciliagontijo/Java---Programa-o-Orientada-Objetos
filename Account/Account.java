@@ -9,6 +9,15 @@ public class Account
     private String password;
     private Date openingDate;
     
+    public Account(String name, int num) //construtor sem parametros
+    {
+        this.name = "";
+        this.balance = 0.0;
+        this.num = 0;
+        this.limit = 0;
+        this.password = "0000";
+    }
+
     public Account() //construtor sem parametros
     {
         this.name = "";
